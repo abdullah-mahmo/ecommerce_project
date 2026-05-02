@@ -10,8 +10,9 @@ class CustomeSliderOnBoarding extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+       controller:controller.pageController,
       onPageChanged: (val) {
-        print(val);
+        controller.onPageChanged(val);
       },
       itemCount: onBoardingList.length,
       itemBuilder: (BuildContext context, int i) => Column(

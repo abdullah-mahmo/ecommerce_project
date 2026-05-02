@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 abstract class OnBoardingcontroller extends GetxController {
@@ -6,16 +7,27 @@ abstract class OnBoardingcontroller extends GetxController {
 }
 
 class OnBoardingControllerImp extends OnBoardingcontroller {
-  int? currentPage;
+  int currentPage = 0;
+  late PageController pageController;
   @override
   next() {
-    // TODO: implement next
-    throw UnimplementedError();
+    currentPage++;
+    pageController.animateToPage(
+      currentPage,
+      duration: const Duration(milliseconds: 900),
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
   onPageChanged(int index) {
     currentPage = index;
-    throw UnimplementedError();
+    update();
+  }
+
+  @override
+  void onInit() {
+    pageController = PageController();
+    super.onInit();
   }
 }
