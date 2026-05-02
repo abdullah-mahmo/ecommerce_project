@@ -17,7 +17,7 @@ class CustomeSliderOnBoarding extends GetView<OnBoardingControllerImp> {
       itemCount: onBoardingList.length,
       itemBuilder: (BuildContext context, int i) => Column(
         children: [
-          Text(onBoardingList[i].title!),
+          Text(onBoardingList[i].title!,style:Theme.of(context).textTheme.headlineLarge),
           const SizedBox(height: 30),
           Image.asset(
             onBoardingList[i].image!,
@@ -28,7 +28,7 @@ class CustomeSliderOnBoarding extends GetView<OnBoardingControllerImp> {
           const SizedBox(height: 80),
           Text(
             onBoardingList[i].body!,
-            style: TextStyle(height: 2, color: ColorApp.grey),
+            style:Theme.of(context).textTheme.headlineMedium ,
           ),
           Expanded(flex: 1, child: Column(children: [
 
