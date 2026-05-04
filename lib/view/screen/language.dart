@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/view/widget/language/customebuttonlang.dart';
 import 'package:flutter/material.dart';
+
 
 class Language extends StatelessWidget {
   const Language({Key? key}) : super(key: key);
@@ -11,18 +13,17 @@ class Language extends StatelessWidget {
 
     ),
     body:Container(
-       padding:EdgeInsets.all(15),
+      //  padding:EdgeInsets.all(15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
      
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: MaterialButton(onPressed: (){} ,
-            color:ColorApp.red ,
-            child: Text("Ar"),))
+          Text("Choose language",style: Theme.of(context).textTheme.headlineLarge),
+            CustomeButtonLang(lang:"Ar",onPressed: (){}),
+            CustomeButtonLang(lang:"En",onPressed: (){}),
+            
 
-        ],
+        ],    
       ),
     )) ;
   }

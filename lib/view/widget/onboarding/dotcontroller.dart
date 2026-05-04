@@ -3,6 +3,8 @@ import 'package:ecommerce_app/data/datasource/static/static.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/controller/onboardingcontroller.dart';
 
+
+
 class DotControllerOnBoarding extends StatelessWidget {
   const DotControllerOnBoarding({super.key});
 
