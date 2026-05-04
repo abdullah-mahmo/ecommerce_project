@@ -10,3 +10,4 @@ class MyServices extends GetxService {
     return this;
   }
 }
+
