@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Language(),
+      home: Login(),
       // home: OnBoarding(),
       routes: routes,
     );
