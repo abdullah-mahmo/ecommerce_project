@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 
 class CustomeButtonLang extends StatelessWidget {
-  const CustomeButtonLang({super.key, required this.lang ,required this.onPressed});
-
   final String lang;
   final void Function()? onPressed;
+  const CustomeButtonLang({super.key, required this.lang ,required this.onPressed});
+
+  
 
   @override
   Widget build(BuildContext context) {
