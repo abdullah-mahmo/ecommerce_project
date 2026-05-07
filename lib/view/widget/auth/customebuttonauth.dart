@@ -2,18 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 
 class CustomeButtonAuth extends StatelessWidget {
-  const CustomeButtonAuth({super.key});
+  final String buttonText;
+  final void Function()? onPressed;
+  const CustomeButtonAuth({
+    super.key,
+    required this.buttonText,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      onPressed: onPressed,
 
-      onPressed: (){},
-
-      padding: EdgeInsets.symmetric(horizontal:150,vertical: 15),
-      color:ColorApp.orange ,
-      child:Text("Log IN") ,
-      shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(20)),
+      padding: EdgeInsets.symmetric(horizontal: 150, vertical: 15),
+      color: ColorApp.orange,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Text(buttonText),
     );
   }
 }

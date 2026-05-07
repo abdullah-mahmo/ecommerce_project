@@ -4,62 +4,84 @@ import 'package:ecommerce_app/view/widget/auth/custometextauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometexttitleauth.dart';
 import 'package:ecommerce_app/view/widget/auth/logoauth.dart';
-import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
 import 'package:ecommerce_app/view/widget/auth/textsignauth.dart';
-import 'package:ecommerce_app/controller/auth/logincontroller.dart';
+import 'package:ecommerce_app/controller/auth/signupcontroller.dart';
 import 'package:ecommerce_app/core/constant/imageassets.dart';
 
-class Login extends StatelessWidget {
+class Signup extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-
-
-    LogincontrollerImp controller = Get.put(LogincontrollerImp());
+    SginupControllerImp controller = Get.put(SginupControllerImp());
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sign In",
+          "Sign UP",
           style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Sign In"),
+          CustomeTexttitleAuth(title: "Welcome Back"),
 
-          LogoAuth(picture: ImageAssets.login,),
+          LogoAuth(picture: ImageAssets.signup),
           CustomeTextBodyAuth(
             body:
                 "Sign in with your email and password \n Countiue With Social Media",
           ),
 
           Form(
-            key:formstate,
+            key: formstate,
+
             child: Container(
               padding: EdgeInsets.all(30),
               child: Column(
                 children: [
                   CustomeTextAuth(
-                    myController: controller.password,
-                      validator: (val) {
-                        if (val == "") {
-                          return "Enter Your Password";
-                        }
-                      },
+                    myController: controller.username,
+                    validator: (val) {
+                      if (val == "") {
+                        return "Enter Your Password";
+                      }else if(val!.length < 10){
+                          return "Password Is Weak";
+                      }
+                    },
+                    label: Text("Username"),
+                    hint: Text("Enter Your Username"),
+                    iconData: Icons.person_3_rounded,
+                  ),
+
+                  CustomeTextAuth(
+                     myController: controller.email,
+                     validator: (val) {
+                      if (val == "") {
+                        return "Enter Your Password";
+                      }
+                    },
                     label: Text("Email"),
                     hint: Text("Enter Your Email"),
                     iconData: Icons.email_outlined,
                   ),
-                  SizedBox(height: 20),
                   CustomeTextAuth(
-                    myController: controller.email,
+                     myController: controller.phone,
                       validator: (val) {
-                        if (val == "") {
-                          return "Enter Your Password";
-                        }
-                      },
+                      if (val == "") {
+                        return "Enter Your Password";
+                      }
+                    },
+                    label: Text("Phone"),
+                    hint: Text("Enter Your Phone"),
+                    iconData: Icons.phone_outlined,
+                  ),
+                  CustomeTextAuth(
+                     myController: controller.password,
+                      validator: (val) {
+                      if (val == "") {
+                        return "Enter Your Password";
+                      }
+                    },
                     label: Text("Password"),
                     hint: Text("Enter Your Password"),
                     iconData: Icons.password_outlined,
@@ -73,14 +95,12 @@ class Login extends StatelessWidget {
             child: Text("Forget password", textAlign: TextAlign.end),
           ),
           SizedBox(height: 10),
-          CustomeButtonAuth(buttonText: "Log In", onPressed: () {}),
-          SizedBox(height: 10),
 
           CustomeTextAuthRow(
-            rowText: "Sign up",
-            rowText2: "Do'nt Have An Account,",
+            rowText: " Login",
+            rowText2: "Do Have An Account, ",
             onPressed: () {
-              controller.goToSignup();
+              controller.goToLogin();
             },
           ),
         ],

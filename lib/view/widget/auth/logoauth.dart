@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/core/constant/imageassets.dart';
 
 
 class LogoAuth extends StatelessWidget {
-  const LogoAuth({super.key});
-
+   final String picture;
+  const LogoAuth({super.key ,required this.picture});
+ 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(ImageAssets.login, height: 300, width: 150);
+    return Image.asset(picture, height: 300, width: 150);
   }
 }
