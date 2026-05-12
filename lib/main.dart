@@ -1,14 +1,15 @@
-import 'package:ecommerce_app/view/screen/auth/signup.dart';
+import 'package:ecommerce_app/view/screen/auth/verfiycode.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce_app/view/screen/auth/forgetpassword.dart';
+import 'package:ecommerce_app/view/screen/auth/signup.dart';
 import 'package:get/get.dart';
-
 import 'package:ecommerce_app/routes.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/localization/changelocal.dart';
-import 'package:ecommerce_app/view/screen/language.dart';
-
+import 'package:ecommerce_app/view/screen/auth/resetpassword.dart';
+import 'package:ecommerce_app/view/widget/onboarding/Test.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +31,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
-          headlineLarge: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          headlineLarge: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
           headlineMedium: TextStyle(
             height: 2,
             color: ColorApp.grey,
@@ -43,8 +47,11 @@ class MyApp extends StatelessWidget {
       // home: Login(),
       // home: Language(),
       // home: OnBoarding(),
-       home: Signup(),
+      // home: Resetpassword(),
 
+       home: ForGetPassword(),
+      // home: VerfiyPassword(),
+      // home: Test(),
       routes: routes,
     );
   }

@@ -5,32 +5,32 @@ import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometexttitleauth.dart';
 import 'package:ecommerce_app/view/widget/auth/logoauth.dart';
 import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
-import 'package:ecommerce_app/view/widget/auth/textsignauth.dart';
-import 'package:ecommerce_app/controller/auth/logincontroller.dart';
+import 'package:ecommerce_app/controller/auth/forgetpasswordcontroller.dart';
 import 'package:ecommerce_app/core/constant/imageassets.dart';
 
-class Login extends StatelessWidget {
+class ForGetPassword extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    LogincontrollerImp controller = Get.put(LogincontrollerImp());
+    ForgetPasswordControllerImp controller = Get.put(
+      ForgetPasswordControllerImp(),
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sign In",
+          "Forget Password",
           style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Sign In"),
+          CustomeTexttitleAuth(title: "Forget Password"),
 
-          LogoAuth(picture: ImageAssets.login),
+          LogoAuth(picture: ImageAssets.forgitPassword),
           CustomeTextBodyAuth(
-            body:
-                "Sign in with your email and password \n Countiue With Social Media",
+            body: "Please Enter You Email Address To Recive A Verification Code",
           ),
 
           Form(
@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
               child: Column(
                 children: [
                   CustomeTextAuth(
-                    myController: controller.password,
+                    myController: controller.email,
                     validator: (val) {
                       if (val == "") {
                         return "Enter Your Password";
@@ -50,42 +50,19 @@ class Login extends StatelessWidget {
                     hint: Text("Enter Your Email"),
                     iconData: Icons.email_outlined,
                   ),
-                  SizedBox(height: 20),
-                  CustomeTextAuth(
-                    myController: controller.email,
-                    validator: (val) {
-                      if (val == "") {
-                        return "Enter Your Password";
-                      }
-                    },
-                    label: Text("Password"),
-                    hint: Text("Enter Your Password"),
-                    iconData: Icons.password_outlined,
-                  ),
                 ],
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(left: 200),
-            child: InkWell(
-              onTap: () {
-                controller.goToForgetPassword();
-              },
-              child: Text("Forget password", textAlign: TextAlign.end),
-            ),
-          ),
+        
           SizedBox(height: 10),
-          CustomeButtonAuth(buttonText: "Log In", onPressed: () {}),
-          SizedBox(height: 10),
-
-          CustomeTextAuthRow(
-            rowText: "Sign up",
-            rowText2: "Do'nt Have An Account,",
+          CustomeButtonAuth(
+            buttonText: "Check",
             onPressed: () {
-              controller.goToSignup();
+              controller.goToVeryfiyCode();
             },
           ),
+          SizedBox(height: 10),
         ],
       ),
     );

@@ -6,6 +6,7 @@ import 'package:ecommerce_app/core/constant/routes.dart';
 abstract class LoginController extends GetxController {
   dynamic login();
   dynamic goToSignup();
+  dynamic goToForgetPassword();
 }
 
 class LogincontrollerImp extends LoginController {
@@ -18,6 +19,11 @@ class LogincontrollerImp extends LoginController {
   @override
   goToSignup() {
     Get.toNamed(AppRoute.signup);
+  }
+
+  @override
+  goToForgetPassword() {
+    Get.toNamed(AppRoute.forgetPassword);
   }
 
   @override

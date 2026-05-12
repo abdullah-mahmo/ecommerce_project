@@ -90,10 +90,7 @@ class Signup extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(left: 200),
-            child: Text("Forget password", textAlign: TextAlign.end),
-          ),
+        
           SizedBox(height: 10),
 
           CustomeTextAuthRow(
