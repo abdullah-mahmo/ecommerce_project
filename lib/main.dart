@@ -34,20 +34,7 @@ class MyApp extends StatelessWidget {
       translations: MyTranslation(),
       locale: controller.language,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: TextTheme(
-          headlineLarge: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-          headlineMedium: TextStyle(
-            height: 2,
-            color: ColorApp.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 17,
-          ),
-        ),
-      ),
+      theme: controller.appTheme,
 
       // home: Login(),
       home: Language(),
