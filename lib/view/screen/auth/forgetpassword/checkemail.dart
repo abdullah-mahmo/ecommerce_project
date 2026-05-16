@@ -1,36 +1,31 @@
-import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometexttitleauth.dart';
 import 'package:ecommerce_app/view/widget/auth/logoauth.dart';
+import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
+import 'package:ecommerce_app/controller/auth/checkemailcontroller.dart';
 import 'package:ecommerce_app/core/constant/imageassets.dart';
-import 'package:ecommerce_app/controller/auth/verfiycodecontroller.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class VerfiyCode extends StatelessWidget {
+class CheckEmail extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-   VerfiycodeControllerImp controller = Get.put(
-     VerfiycodeControllerImp(),
-    );
+    CheckEmailControllerImp controller = Get.put(CheckEmailControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Verfiy Code",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
+        title: Text("52".tr, style: Theme.of(context).textTheme.headlineLarge),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Verfiy Code"),
+          CustomeTexttitleAuth(title: "53".tr),
 
-          LogoAuth(picture: ImageAssets.forgitPassword),
-          CustomeTextBodyAuth(body: "Please Enter You Verfiy  Code"),
+          LogoAuth(picture: ImageAssets.checkEmail),
+          CustomeTextBodyAuth(body: "54".tr),
 
           Form(
             key: formstate,
@@ -49,7 +44,7 @@ class VerfiyCode extends StatelessWidget {
                     },
                     //runs when every textfield is filled
                     onSubmit: (String verificationCode) {
-                      controller.goToResetPassword();
+                      controller.goToSuccessSignup();
                       // showDialog(
                       //   context: context,
                       //   builder: (context) {

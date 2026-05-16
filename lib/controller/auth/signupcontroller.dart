@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 import 'package:ecommerce_app/core/constant/routes.dart';
 
 abstract class SginupController extends GetxController {
-
   dynamic signUp();
   dynamic goToLogin();
 }
@@ -16,7 +14,9 @@ class SginupControllerImp extends SginupController {
   late TextEditingController phone;
   late TextEditingController password;
   @override
-  signUp() {}
+  signUp() {
+    Get.offNamed(AppRoute.checkEmail);
+  }
 
   @override
   goToLogin() {

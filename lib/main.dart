@@ -1,6 +1,6 @@
-import 'package:ecommerce_app/view/screen/auth/verfiycode.dart';
+import 'package:ecommerce_app/view/screen/auth/forgetpassword/verfiycode.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/view/screen/auth/forgetpassword.dart';
+import 'package:ecommerce_app/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommerce_app/view/screen/auth/signup.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/routes.dart';
@@ -8,8 +8,12 @@ import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/localization/changelocal.dart';
-import 'package:ecommerce_app/view/screen/auth/resetpassword.dart';
-import 'package:ecommerce_app/view/widget/onboarding/Test.dart'; 
+
+import 'package:ecommerce_app/view/screen/auth/forgetpassword/resetpassword.dart';
+import 'package:ecommerce_app/view/widget/onboarding/Test.dart';
+
+import 'package:ecommerce_app/view/screen/language.dart';
+import 'package:ecommerce_app/view/screen/auth/forgetpassword/checkemail.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +32,7 @@ class MyApp extends StatelessWidget {
     LocalController controller = Get.put(LocalController());
     return GetMaterialApp(
       translations: MyTranslation(),
+      locale: controller.language,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
@@ -40,16 +45,19 @@ class MyApp extends StatelessWidget {
             color: ColorApp.grey,
             fontWeight: FontWeight.bold,
             fontSize: 17,
-            locale: controller.language,
           ),
         ),
       ),
-      // home: Login(),
-      // home: Language(),
-      // home: OnBoarding(),
-      // home: Resetpassword(),
 
-       home: ForGetPassword(),
+      // home: Login(),
+      home: Language(),
+      // home: OnBoarding(),
+      // home: SuccessSignUp(),
+      // home: CheckEmail(),
+
+      // home: Resetpassword(),
+      // home: Signup(),
+      // home: ForGetPassword(),
       // home: VerfiyPassword(),
       // home: Test(),
       routes: routes,

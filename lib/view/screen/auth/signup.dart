@@ -1,7 +1,8 @@
+import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextauth.dart';
-import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
+import 'package:ecommerce_app/view/widget/auth/customeButtonAuth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometexttitleauth.dart';
 import 'package:ecommerce_app/view/widget/auth/logoauth.dart';
 import 'package:ecommerce_app/view/widget/auth/textsignauth.dart';
@@ -16,21 +17,15 @@ class Signup extends StatelessWidget {
     SginupControllerImp controller = Get.put(SginupControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Sign UP",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
+        title: Text("38".tr, style: Theme.of(context).textTheme.headlineLarge),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Welcome Back"),
+          CustomeTexttitleAuth(title: "39".tr),
 
-          LogoAuth(picture: ImageAssets.signup),
-          CustomeTextBodyAuth(
-            body:
-                "Sign in with your email and password \n Countiue With Social Media",
-          ),
+          // LogoAuth(picture: ImageAssets.signup),
+          CustomeTextBodyAuth(body: "40".tr),
 
           Form(
             key: formstate,
@@ -44,58 +39,66 @@ class Signup extends StatelessWidget {
                     validator: (val) {
                       if (val == "") {
                         return "Enter Your Password";
-                      }else if(val!.length < 10){
-                          return "Password Is Weak";
+                      } else if (val!.length < 10) {
+                        return "Password Is Weak";
                       }
                     },
-                    label: Text("Username"),
-                    hint: Text("Enter Your Username"),
+                    label: Text("41".tr),
+                    hint: Text("42".tr),
                     iconData: Icons.person_3_rounded,
                   ),
 
                   CustomeTextAuth(
-                     myController: controller.email,
-                     validator: (val) {
+                    myController: controller.email,
+                    validator: (val) {
                       if (val == "") {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Email"),
-                    hint: Text("Enter Your Email"),
+                    label: Text("43".tr),
+                    hint: Text("44".tr),
                     iconData: Icons.email_outlined,
                   ),
                   CustomeTextAuth(
-                     myController: controller.phone,
-                      validator: (val) {
+                    myController: controller.phone,
+                    validator: (val) {
                       if (val == "") {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Phone"),
-                    hint: Text("Enter Your Phone"),
+                    label: Text("45".tr),
+                    hint: Text("46".tr),
                     iconData: Icons.phone_outlined,
                   ),
                   CustomeTextAuth(
-                     myController: controller.password,
-                      validator: (val) {
+                    myController: controller.password,
+                    validator: (val) {
                       if (val == "") {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Password"),
-                    hint: Text("Enter Your Password"),
+                    label: Text("47".tr),
+                    hint: Text("48".tr),
                     iconData: Icons.password_outlined,
                   ),
                 ],
               ),
             ),
           ),
-        
-          SizedBox(height: 10),
+          CustomeButtonAuth(
+            buttonText: "49".tr,
+            onPressed: () {
+              controller.signUp();
+            },
+          ),
 
+          // Container(
+          //   padding: EdgeInsets.only(left: 200),
+          //   child: Text("50".tr, textAlign: TextAlign.end),
+          // ),
           CustomeTextAuthRow(
-            rowText: " Login",
-            rowText2: "Do Have An Account, ",
+            rowText: "50".tr,
+            rowText2: "51".tr,
             onPressed: () {
               controller.goToLogin();
             },

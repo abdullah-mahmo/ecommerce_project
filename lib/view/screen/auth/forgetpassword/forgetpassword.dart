@@ -18,20 +18,15 @@ class ForGetPassword extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Forget Password",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
+        title: Text("20".tr, style: Theme.of(context).textTheme.headlineLarge),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Forget Password"),
+          CustomeTexttitleAuth(title: "21".tr),
 
           LogoAuth(picture: ImageAssets.forgitPassword),
-          CustomeTextBodyAuth(
-            body: "Please Enter You Email Address To Recive A Verification Code",
-          ),
+          CustomeTextBodyAuth(body: "22".tr),
 
           Form(
             key: formstate,
@@ -46,18 +41,18 @@ class ForGetPassword extends StatelessWidget {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Email"),
-                    hint: Text("Enter Your Email"),
+                    label: Text("23".tr),
+                    hint: Text("24".tr),
                     iconData: Icons.email_outlined,
                   ),
                 ],
               ),
             ),
           ),
-        
+
           SizedBox(height: 10),
           CustomeButtonAuth(
-            buttonText: "Check",
+            buttonText: "25".tr,
             onPressed: () {
               controller.goToVeryfiyCode();
             },

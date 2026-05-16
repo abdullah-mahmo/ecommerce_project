@@ -10,7 +10,6 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     Get.put(OnBoardingControllerImp());
     return Scaffold(
       appBar: AppBar(title: Text("Hello Ecommerce App")),
@@ -18,8 +17,8 @@ class OnBoarding extends StatelessWidget {
         children: [
           Expanded(flex: 3, child: CustomeSliderOnBoarding()),
 
-           DotControllerOnBoarding(),
-          const Spacer(flex: 2),
+          DotControllerOnBoarding(),
+          // const Spacer(flex: 2),
           const CustomeButtonOnBoarding(),
         ],
       ),

@@ -1,7 +1,6 @@
 // configuration page
 
-
- //main السيرفسس علشان اول ما اشغل التطبيق تشتغل كل حاجة احنا عايزين التطبيق يبدا بيها زى الللغة وبيتم وضع السيرفسس فى ال
+//main السيرفسس علشان اول ما اشغل التطبيق تشتغل كل حاجة احنا عايزين التطبيق يبدا بيها زى الللغة وبيتم وضع السيرفسس فى ال
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,6 +14,6 @@ class MyServices extends GetxService {
   }
 }
 
-initialServices()async {
- await  Get.putAsync(() => MyServices().init());
+Future<void> initialServices() async {
+  await Get.putAsync<MyServices>(() async => await MyServices().init());
 }

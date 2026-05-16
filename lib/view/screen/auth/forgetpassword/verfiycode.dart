@@ -1,36 +1,31 @@
-
+import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:ecommerce_app/view/widget/auth/custometextauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:ecommerce_app/view/widget/auth/custometexttitleauth.dart';
 import 'package:ecommerce_app/view/widget/auth/logoauth.dart';
 import 'package:ecommerce_app/core/constant/imageassets.dart';
-import 'package:ecommerce_app/controller/auth/successsignupcontroller.dart';
+import 'package:ecommerce_app/controller/auth/verfiycodecontroller.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class SuccessSignUp extends StatelessWidget {
+class VerfiyCode extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    SuccessSignUpControllerImp controller = Get.put(
-      SuccessSignUpControllerImp(),
-    );
+    VerfiycodeControllerImp controller = Get.put(VerfiycodeControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Verfiy Code",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
+        title: Text("27".tr, style: Theme.of(context).textTheme.headlineLarge),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Verfiy Code"),
+          CustomeTexttitleAuth(title: "28".tr),
 
-          LogoAuth(picture: ImageAssets.forgitPassword),
-          CustomeTextBodyAuth(body: "Please Enter You Verfiy  Code"),
+          LogoAuth(picture: ImageAssets.verifyCode),
+          CustomeTextBodyAuth(body: "29".tr),
 
           Form(
             key: formstate,

@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 import 'package:ecommerce_app/core/constant/routes.dart';
 
 abstract class SuccessSignUpController extends GetxController {
-  dynamic goToResetPassword();
+  dynamic goToLogin();
 }
 
 class SuccessSignUpControllerImp extends SuccessSignUpController {
   late TextEditingController? verfiyCode;
 
   @override
-  goToResetPassword() {
-    Get.offNamed(AppRoute.resetPassword);
+  goToLogin() {
+    Get.offNamed(AppRoute.login);
   }
 
   @override

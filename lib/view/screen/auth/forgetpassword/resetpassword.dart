@@ -5,6 +5,7 @@ import 'package:ecommerce_app/view/widget/auth/custometextbodyauth.dart';
 import 'package:ecommerce_app/core/constant/imageassets.dart';
 import 'package:ecommerce_app/controller/auth/resetpasswordcontroller.dart';
 import 'package:ecommerce_app/view/widget/auth/custometextauth.dart';
+import 'package:ecommerce_app/view/widget/auth/customebuttonauth.dart';
 import 'package:get/get.dart';
 
 class ResetPassword extends StatelessWidget {
@@ -15,17 +16,14 @@ class ResetPassword extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "ResetPassword",
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        title: Text("30".tr, style: Theme.of(context).textTheme.bodySmall),
       ),
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Save"),
+          CustomeTexttitleAuth(title: "31".tr),
 
-          LogoAuth(picture: ImageAssets.forgitPassword),
-          CustomeTextBodyAuth(body: "Please Enter new Password"),
+          LogoAuth(picture: ImageAssets.resetpassword),
+          CustomeTextBodyAuth(body: "32".tr),
 
           Form(
             key: formstate,
@@ -34,15 +32,32 @@ class ResetPassword extends StatelessWidget {
               child: Column(
                 children: [
                   CustomeTextAuth(
-                    myController: controller.goToSuccessResetPassword(),
+                    myController: controller.resetPassword,
                     validator: (val) {
                       if (val == "") {
-                        return "Enter Your Password";
+                        return "Enter Your  New Password";
                       }
                     },
-                    label: Text("Email"),
-                    hint: Text("Enter Your Email"),
-                    iconData: Icons.email_outlined,
+                    label: Text("33".tr),
+                    hint: Text("34".tr),
+                    iconData: Icons.password_outlined,
+                  ),
+                  CustomeTextAuth(
+                    myController: controller.resetPassword,
+                    validator: (val) {
+                      if (val == "") {
+                        return "Enter Your  New Password";
+                      }
+                    },
+                    label: Text("35".tr),
+                    hint: Text("36".tr),
+                    iconData: Icons.password_rounded,
+                  ),
+                  CustomeButtonAuth(
+                    buttonText: "37".tr,
+                    onPressed: () {
+                      controller.goToSuccessResetPassword();
+                    },
                   ),
                 ],
               ),

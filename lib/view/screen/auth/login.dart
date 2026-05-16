@@ -17,21 +17,15 @@ class Login extends StatelessWidget {
     LogincontrollerImp controller = Get.put(LogincontrollerImp());
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Sign In",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
+        title: Text("10".tr, style: Theme.of(context).textTheme.headlineLarge),
       ),
 
       body: Column(
         children: [
-          CustomeTexttitleAuth(title: "Sign In"),
+          CustomeTexttitleAuth(title: "10".tr),
 
           LogoAuth(picture: ImageAssets.login),
-          CustomeTextBodyAuth(
-            body:
-                "Sign in with your email and password \n Countiue With Social Media",
-          ),
+          CustomeTextBodyAuth(body: "11".tr),
 
           Form(
             key: formstate,
@@ -46,8 +40,8 @@ class Login extends StatelessWidget {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Email"),
-                    hint: Text("Enter Your Email"),
+                    label: Text("12".tr),
+                    hint: Text("13".tr),
                     iconData: Icons.email_outlined,
                   ),
                   SizedBox(height: 20),
@@ -58,8 +52,8 @@ class Login extends StatelessWidget {
                         return "Enter Your Password";
                       }
                     },
-                    label: Text("Password"),
-                    hint: Text("Enter Your Password"),
+                    label: Text("14".tr),
+                    hint: Text("15".tr),
                     iconData: Icons.password_outlined,
                   ),
                 ],
@@ -72,16 +66,16 @@ class Login extends StatelessWidget {
               onTap: () {
                 controller.goToForgetPassword();
               },
-              child: Text("Forget password", textAlign: TextAlign.end),
+              child: Text("16".tr, textAlign: TextAlign.end),
             ),
           ),
           SizedBox(height: 10),
-          CustomeButtonAuth(buttonText: "Log In", onPressed: () {}),
+          CustomeButtonAuth(buttonText: "17".tr, onPressed: () {}),
           SizedBox(height: 10),
 
           CustomeTextAuthRow(
-            rowText: "Sign up",
-            rowText2: "Do'nt Have An Account,",
+            rowText: "18".tr,
+            rowText2: "19".tr,
             onPressed: () {
               controller.goToSignup();
             },

@@ -12,9 +12,9 @@ class CustomeButtonOnBoarding extends GetView<OnBoardingControllerImp> {
       child: MaterialButton(
         color: Colors.blue,
         onPressed: () {
-         controller.next();
+          controller.next();
         },
-        child: Text("Continue"),
+        child: Text("9r".tr),
       ),
     );
   }
